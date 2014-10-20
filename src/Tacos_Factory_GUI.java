@@ -8,7 +8,7 @@
  * @author apple
  */
 public class Tacos_Factory_GUI extends javax.swing.JFrame {
-    Tacos_Factory tacos;
+    Tacos_Factory tacos= new Tacos_Factory();
     /**
      * Creates new form Tacos_Factory_GUI
      */
@@ -26,23 +26,20 @@ public class Tacos_Factory_GUI extends javax.swing.JFrame {
     private void initComponents() {
 
         ChefImage = new javax.swing.JLabel();
-        MaistroImage = new javax.swing.JLabel();
         ChefSlider = new javax.swing.JSlider();
         MaistroSlider = new javax.swing.JSlider();
         DiosTacosNameLabel = new javax.swing.JLabel();
         MaistroNameLabel = new javax.swing.JLabel();
-        Barra = new javax.swing.JPanel();
         start = new javax.swing.JButton();
+        MaistroImage = new javax.swing.JLabel();
+        Cooked = new javax.swing.JLabel();
+        Eated = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
         ChefImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ChefImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Chef.jpg"))); // NOI18N
-
-        MaistroImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        MaistroImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maistro.jpg"))); // NOI18N
-        MaistroImage.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         ChefSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -60,8 +57,6 @@ public class Tacos_Factory_GUI extends javax.swing.JFrame {
 
         MaistroNameLabel.setText("Maistro");
 
-        Barra.setLayout(new java.awt.GridLayout());
-
         start.setText("Tacos!");
         start.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,53 +64,69 @@ public class Tacos_Factory_GUI extends javax.swing.JFrame {
             }
         });
 
+        MaistroImage.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        MaistroImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/maistro.jpg"))); // NOI18N
+        MaistroImage.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(ChefImage, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Barra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(MaistroImage)
-                .addGap(19, 19, 19))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(50, 50, 50)
+                        .addComponent(ChefImage, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(ChefSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(Cooked)))
+                .addGap(465, 465, 465)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MaistroImage)
+                    .addComponent(MaistroSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 16, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
+                .addGap(58, 58, 58)
                 .addComponent(DiosTacosNameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(MaistroNameLabel)
-                .addGap(80, 80, 80))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(ChefSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                .addGap(98, 98, 98))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(start)
-                .addGap(88, 88, 88)
-                .addComponent(MaistroSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(386, 386, 386))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Eated)
+                .addGap(102, 102, 102))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(start)
+                .addContainerGap(74, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(DiosTacosNameLabel)
+                    .addComponent(MaistroNameLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(DiosTacosNameLabel)
-                            .addComponent(MaistroNameLabel))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(Barra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(MaistroImage, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ChefImage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(52, 52, 52)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ChefSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(MaistroSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(53, Short.MAX_VALUE))
+                        .addComponent(MaistroImage, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(MaistroSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Eated)
+                        .addGap(18, 18, 18)
+                        .addComponent(start))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ChefImage)
+                        .addGap(18, 18, 18)
+                        .addComponent(ChefSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Cooked)))
+                .addContainerGap())
         );
 
         ChefImage.getAccessibleContext().setAccessibleDescription("");
@@ -125,18 +136,19 @@ public class Tacos_Factory_GUI extends javax.swing.JFrame {
 
     private void startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_startActionPerformed
             // TODO add your handling code here:
-        Tacos_Factory tacos= new Tacos_Factory();
-        tacos.startTacosFactory(ChefSlider.getValue(),MaistroSlider.getValue());
+        tacos.startTacosFactory(ChefSlider.getValue(),MaistroSlider.getValue(),Cooked,Eated);
     }//GEN-LAST:event_startActionPerformed
 
     private void ChefSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_ChefSliderStateChanged
         // TODO add your handling code here:
-        tacos.chef_velocity=ChefSlider.getValue();
+        System.out.println(ChefSlider.getValue());
+        tacos.Change_Chef_velocity(ChefSlider.getValue());
     }//GEN-LAST:event_ChefSliderStateChanged
 
     private void MaistroSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_MaistroSliderStateChanged
         // TODO add your handling code here:
-        tacos.maistro_velocity=MaistroSlider.getValue();
+        System.out.println(MaistroSlider.getValue());
+        tacos.Change_Maistro_velocity(MaistroSlider.getValue());
     }//GEN-LAST:event_MaistroSliderStateChanged
 
     /**
@@ -175,10 +187,11 @@ public class Tacos_Factory_GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Barra;
     private javax.swing.JLabel ChefImage;
     private javax.swing.JSlider ChefSlider;
+    public javax.swing.JLabel Cooked;
     private javax.swing.JLabel DiosTacosNameLabel;
+    public javax.swing.JLabel Eated;
     private javax.swing.JLabel MaistroImage;
     private javax.swing.JLabel MaistroNameLabel;
     private javax.swing.JSlider MaistroSlider;
